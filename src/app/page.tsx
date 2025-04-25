@@ -38,13 +38,14 @@ export default function Home() {
         <Tabs defaultValue="partI" className="w-full">
           <TabsList className="mx-auto w-full justify-start space-x-2 overflow-x-auto">
             {constitutionData.map((part) => (
+                <Link key={part.id} href={`/part/${part.id}`} className="no-underline">
               <TabsTrigger
-                key={part.id}
                 value={part.id}
                 className="data-[state=active]:bg-[hsl(var(--primary))] data-[state=active]:text-primary-foreground"
               >
                 {part.title}
               </TabsTrigger>
+                      </Link>
             ))}
           </TabsList>
           {constitutionData.map((part) => (
