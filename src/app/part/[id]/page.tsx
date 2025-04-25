@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface PartPageProps {
   params: { id: string };
@@ -38,9 +39,7 @@ export default function PartPage({ params }: PartPageProps) {
             {part.articles.map((article, index) => (
               <li
                 key={article.id}
-                className={`rounded-md ${
-                  index % 2 === 0 ? "bg-muted" : "bg-accent"
-                } hover:bg-primary/10 transition`}
+                className="rounded-md hover:bg-primary/10 transition"
               >
                 <Link
                   href={`/article/${article.id}`}
@@ -58,4 +57,5 @@ export default function PartPage({ params }: PartPageProps) {
     </div>
   );
 }
+
 
