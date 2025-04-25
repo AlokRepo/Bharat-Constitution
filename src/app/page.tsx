@@ -6,22 +6,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-function getArticleRange(partId: string) {
-  const part = constitutionData.find((part) => part.id === partId);
-  if (!part) return "Article range not found";
-
-  const firstArticle =
-    part.articles.length > 0
-      ? part.articles[0].id.replace(/[^0-9]/g, "")
-      : "N/A";
-  const lastArticle =
-    part.articles.length > 0
-      ? part.articles[part.articles.length - 1].id.replace(/[^0-9]/g, "")
-      : "N/A";
-
-  return `Articles ${firstArticle} to ${lastArticle}`;
-}
-
 export default function Home() {
   const router = useRouter();
 
@@ -51,9 +35,6 @@ export default function Home() {
                 onClick={() => router.push(`/part/${part.id}`)}
               >
                 {part.title}
-                <p className="text-sm text-gray-600 mt-1">
-                  {getArticleRange(part.id)}
-                </p>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -74,3 +55,4 @@ export default function Home() {
     </div>
   );
 }
+
