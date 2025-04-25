@@ -33,15 +33,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           {article.title}
         </h1>
         <div className={`border rounded-md p-4 ${styles.articleContent}`} style={{ backgroundColor: 'rgba(255, 153, 51, 0.1)', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-          <p className="text-gray-700" style={{ fontFamily: 'serif', fontSize: '1.1rem' }}>{articleContent[article.id]}</p>
+          <p className="text-gray-700" style={{ fontFamily: 'serif', fontSize: '1.1rem' }}>{article.content}</p>
         </div>
         <div className="mt-4 p-4 rounded-md border shadow-sm" style={{ backgroundColor: 'rgba(19, 136, 8, 0.1)', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <h2 className="text-xl font-semibold mb-2">Summary</h2>
-            <p className="text-sm text-muted-foreground" style={{ fontFamily: 'sans-serif', fontSize: '0.9rem' }}>{article?.summary}</p>
+            <p className="text-sm text-muted-foreground" style={{ fontFamily: 'sans-serif', fontSize: '0.9rem' }}>{article.summary}</p>
           </div>
       
 
-      {/* Footer */}
+        
+
       
     </div>
   );
