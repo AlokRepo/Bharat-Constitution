@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="h-24 flex items-center justify-center">
       <div className="w-full h-full flex items-center justify-center">
-        <div className="h-full w-1/3 bg-[hsl(var(--primary))]"></div>
+        <div className="h-full w-1/3 bg-[hsl(var(--primary))] animate-pulse"></div>
         <div className="h-full w-1/3 bg-white flex items-center justify-center">
           {/* Ashok Chakra */}
           <svg
@@ -42,8 +42,9 @@ export default function Header() {
             })}
           </svg>
         </div>
-        <div className="h-full w-1/3 bg-green-500"></div>
+        <div className="h-full w-1/3 bg-green-500 animate-pulse"></div>
       </div>
     </header>
   );
 }
+
