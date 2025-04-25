@@ -13,7 +13,7 @@ interface ArticlePageProps {
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const id = params.id;
+  const { id } = params;
   const router = useRouter();
 
   const article = constitutionData.flatMap(part => part.articles).find(article => article.id === id);
@@ -46,3 +46,4 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
+
