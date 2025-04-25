@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { constitutionData } from "@/lib/constitution-data";
-import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,8 +42,11 @@ export default function Home() {
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
               {part.articles.map((article) => (
                 <div key={article.id} className="mb-4">
-                  <h3 className="text-xl font-medium">{article.title}</h3>
-                  <p className="text-gray-700">{article.content}</p>
+                  <h3 className="text-xl font-medium">
+                    <Link href={`/article/${article.id}`}>
+                      {article.title}
+                    </Link>
+                  </h3>
                 </div>
               ))}
             </TabsContent>
