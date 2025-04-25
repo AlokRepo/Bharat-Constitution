@@ -47,7 +47,7 @@ export default function Home() {
 
       <footer className="h-16 flex items-center justify-center bg-gray-100 mt-8">
         <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Bharat Constitution. All rights
+          &copy; 2025 Bharat Constitution. All rights
           reserved.
         </p>
       </footer>

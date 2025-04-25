@@ -40,12 +40,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       {/* Footer */}
       <footer className="h-16 flex items-center justify-center bg-gray-100">
         <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Bharat Constitution. All rights
+          &copy; 2025 Bharat Constitution. All rights
           reserved.
         </p>
       </footer>
     </div>
   );
 }
-
-

@@ -10,24 +10,8 @@ interface PartPageProps {
   params: { id: string };
 }
 
-function getArticleRange(partId: string) {
-  const part = constitutionData.find((part) => part.id === partId);
-  if (!part) return "Article range not found";
-
-  const firstArticle =
-    part.articles.length > 0
-      ? part.articles[0].id.replace(/[^0-9A-Z]/g, "")
-      : "N/A";
-  const lastArticle =
-    part.articles.length > 0
-      ? part.articles[part.articles.length - 1].id.replace(/[^0-9A-Z]/g, "")
-      : "N/A";
-
-  return `Articles ${firstArticle} to ${lastArticle}`;
-}
-
 export default function PartPage({ params }: PartPageProps) {
-  const { id } = params;
+  const { id } = React.use(Promise.resolve(params));
   const router = useRouter();
 
   const part = constitutionData.find((part) => part.id === id);
@@ -48,9 +32,6 @@ export default function PartPage({ params }: PartPageProps) {
           {part.title}
         </h1>
         <p className="text-gray-500 text-center mb-2">{part.description}</p>
-        <p className="text-gray-600 text-center mb-6">
-          {getArticleRange(part.id)}
-        </p>
 
         <div className="border rounded-md p-4 bg-white shadow-sm">
           <ul className="space-y-2">
@@ -75,7 +56,7 @@ export default function PartPage({ params }: PartPageProps) {
 
       <footer className="h-16 flex items-center justify-center bg-gray-100 mt-8">
         <p className="text-sm text-gray-500 text-center">
-          &copy; {new Date().getFullYear()} Bharat Constitution. All rights
+          &copy; 2025 Bharat Constitution. All rights
           reserved.
         </p>
       </footer>
