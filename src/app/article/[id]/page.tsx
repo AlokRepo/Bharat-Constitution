@@ -35,11 +35,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           {article.title}
         </h1>
         <div className={`border rounded-md p-4 ${styles.articleContent}`}>
-          <p className="text-gray-700">{articleContent[article.id]}</p>
+          <p className="text-gray-700" style={{ fontFamily: 'serif', fontSize: '1.1rem' }}>{articleContent[article.id]}</p>
         </div>
         <div className="mt-4 p-4 rounded-md border shadow-sm bg-secondary text-secondary-foreground">
             <h2 className="text-xl font-semibold mb-2">Summary</h2>
-            <p className="text-sm text-muted-foreground">{article?.summary}</p>
+            <p className="text-sm text-muted-foreground" style={{ fontFamily: 'sans-serif', fontSize: '0.9rem' }}>{article?.summary}</p>
           </div>
       
 
@@ -48,4 +48,5 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
+
 
