@@ -2,15 +2,22 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { constitutionData } from "@/lib/constitution-data";
-import Link from "next/link";
-import { Circle } from "lucide-react";
-
-const articleBoxColors = [
-  "bg-muted hover:bg-accent",
-  "bg-secondary hover:bg-primary",
-];
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Preload data
+    constitutionData.forEach(part => {
+      part.articles.forEach(article => {
+        router.prefetch(`/article/${article.id}`);
+      });
+    });
+  }, [router]);
+
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <main className="flex-1 container mx-auto py-8">
@@ -19,7 +26,7 @@ export default function Home() {
         </h1>
 
         <Tabs defaultValue="partI" className="w-full">
-          <TabsList className="mx-auto w-full justify-center">
+          <TabsList className="mx-auto w-full justify-center space-x-2">
             {constitutionData.map((part) => (
               <TabsTrigger
                 key={part.id}
@@ -37,13 +44,21 @@ export default function Home() {
               className="mt-4 border rounded-md p-4"
             >
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
-              {part.articles.map((article, index) => (
-                <div key={article.id} className={`mb-4 border rounded-md p-4 ${articleBoxColors[index % articleBoxColors.length]}`}>
-                  <Link href={`/article/${article.id}`} className="text-xl font-medium cursor-pointer no-underline">
-                    {article.title}
-                  </Link>
-                </div>
-              ))}
+              <ul className="space-y-2">
+                {part.articles.map((article) => (
+                  <li key={article.id}>
+                    <a
+                      href={`/article/${article.id}`}
+                      className="block p-4 rounded-md bg-muted hover:bg-accent text-xl font-medium no-underline text-foreground"
+                      onClick={(e) => {
+                        // Optional: Add analytics here
+                      }}
+                    >
+                      {article.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </TabsContent>
           ))}
         </Tabs>
@@ -59,4 +74,3 @@ export default function Home() {
     </div>
   );
 }
-
