@@ -1,10 +1,9 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
@@ -26,12 +25,12 @@ export default function Home() {
         </h1>
 
         <Tabs defaultValue={constitutionData[0].id} className="w-full">
-          <TabsList className="grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <TabsList className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {constitutionData.map((part) => (
               <TabsTrigger
                 key={part.id}
                 value={part.id}
-                className="text-md font-bold rounded-md p-4 cursor-pointer bg-white shadow-sm hover:bg-primary/50"
+                className="text-md font-bold rounded-md p-4 cursor-pointer bg-white shadow-sm hover:bg-primary/50 text-wrap"
                 onClick={() => router.push(`/part/${part.id}`)}
               >
                 {part.title}
@@ -55,4 +54,3 @@ export default function Home() {
     </div>
   );
 }
-
