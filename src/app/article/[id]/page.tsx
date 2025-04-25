@@ -5,13 +5,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface ArticlePageProps {
   params: { id: string };
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = params;
+  const { id } = React.use(Promise.resolve(params));
   const router = useRouter();
 
   // Find the article based on the ID
