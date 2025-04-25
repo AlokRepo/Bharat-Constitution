@@ -41,7 +41,7 @@ export default function Home() {
             >
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
               {part.articles.map((article) => (
-                <div key={article.id} className="mb-4">
+                <div key={article.id} className="mb-4 border rounded-md p-4">
                   <Link href={`/article/${article.id}`} className="text-xl font-medium cursor-pointer">
                     {article.title}
                   </Link>
