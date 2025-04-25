@@ -1,7 +1,7 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
-import { articleContent } from "@/lib/article-content";
+import { articleContent } from "@/lib/article-content"; // Corrected import path
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
