@@ -1,8 +1,11 @@
+"use client";
+
 import { constitutionData } from "@/lib/constitution-data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface PartPageProps {
   params: { id: string };
