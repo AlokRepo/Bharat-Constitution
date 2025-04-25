@@ -21,6 +21,11 @@ export default function PartPage({ params }: PartPageProps) {
     return <div className="text-center py-12">Part not found</div>;
   }
 
+  const getRandomColor = () => {
+    const colors = ["#FF99331A", "#FFFFFF1A", "#1388081A"]; // Tricolor-inspired soft colors
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col px-4 py-8">
       <Button variant="ghost" onClick={() => router.back()} className="mb-4">
@@ -33,19 +38,25 @@ export default function PartPage({ params }: PartPageProps) {
 
       <div className="border rounded-md p-4 bg-white shadow-sm">
         <ul className="space-y-2">
-          {part.articles.map((article) => (
-            <li key={article.id} className="rounded-md transition hover:scale-[1.01]">
-              <Link
-                href={`/article/${article.id}`}
-                className="block p-4 rounded-md no-underline text-foreground"
+          {part.articles.map((article) => {
+            const randomHoverColor = getRandomColor();
+            return (
+              <li
+                key={article.id}
+                className="rounded-md transition hover:scale-[1.01]"
+                style={{ backgroundColor: randomHoverColor }}
               >
-                {article.title}
-              </Link>
-            </li>
-          ))}
+                <Link
+                  href={`/article/${article.id}`}
+                  className="block p-4 rounded-md no-underline text-foreground"
+                >
+                  {article.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
   );
 }
-
