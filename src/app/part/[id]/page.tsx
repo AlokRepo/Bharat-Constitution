@@ -45,8 +45,8 @@ export default function PartPage({ params }: PartPageProps) {
           <p className="text-gray-600 mb-4">{getArticleRange(part.id)}</p>
         <div className="border rounded-md p-4">
               <ul className="space-y-2">
-                  {part.articles.map((article, index) => (
-                      <li key={article.id} className={`rounded-md ${index % 2 === 0 ? 'bg-muted' : 'bg-accent'} hover:bg-primary/50`}>
+                  {part.articles.map((article) => (
+                      <li key={article.id} className={`rounded-md hover:bg-primary/50`}>
                           <Link
                               href={`/article/${article.id}`}
                               className="block p-4 rounded-md no-underline text-foreground"

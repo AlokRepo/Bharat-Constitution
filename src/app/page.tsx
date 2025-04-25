@@ -24,13 +24,12 @@ function getArticleRange(partId: string) {
 
 export default function Home() {
   const router = useRouter();
-  const [openPart, setOpenPart] = useState<string | null>(null);
 
   useEffect(() => {
     // Preload data
     constitutionData.forEach((part) => {
       part.articles.forEach((article) => {
-        router.prefetch(`/article/${article.id}`);
+        router.prefetch(`/part/${part.id}`);
       });
     });
   }, [router]);
@@ -43,22 +42,26 @@ export default function Home() {
         </h1>
 
         <Tabs defaultValue={constitutionData[0].id} className="w-full">
-          <TabsList>
+          <TabsList className="grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
             {constitutionData.map((part) => (
               <TabsTrigger
                 key={part.id}
                 value={part.id}
-                asChild
+                className="text-xl font-bold rounded-md p-4 cursor-pointer bg-white shadow-sm hover:bg-primary/50"
+                onClick={() => router.push(`/part/${part.id}`)}
               >
-                <Link
-                    href={`/part/${part.id}`}
-                    className="block p-3 rounded-md no-underline text-foreground"
-                  >
                 {part.title}
-                </Link>
+                <p className="text-sm text-gray-600 mt-1">
+                  {getArticleRange(part.id)}
+                </p>
               </TabsTrigger>
             ))}
           </TabsList>
+          {constitutionData.map((part) => (
+            <TabsContent key={part.id} value={part.id} className="space-y-6">
+              {/* Content for each part will be displayed on a separate page */}
+            </TabsContent>
+          ))}
         </Tabs>
       </main>
 
