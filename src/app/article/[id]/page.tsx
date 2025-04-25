@@ -21,16 +21,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="h-24 flex items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 text-sm">
-          <Button variant="ghost" size="sm">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Index
-          </Button>
-        </Link>
-      </header>
-
       <main className="flex-1 container mx-auto py-8">
         <h1 className="text-3xl font-semibold text-center mb-6">
           {article.title}
@@ -50,3 +40,4 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
+
