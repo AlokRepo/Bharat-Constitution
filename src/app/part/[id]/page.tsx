@@ -22,7 +22,7 @@ export default function PartPage({ params }: PartPageProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <main className="flex-1 container mx-auto px-4 py-8">
+      
         <Button variant="ghost" onClick={() => router.back()} className="mb-4">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Go Back
@@ -52,14 +52,10 @@ export default function PartPage({ params }: PartPageProps) {
             ))}
           </ul>
         </div>
-      </main>
+      
 
-      <footer className="h-16 flex items-center justify-center bg-gray-100 mt-8">
-        <p className="text-sm text-gray-500 text-center">
-          &copy; 2025 Bharat Constitution. All rights
-          reserved.
-        </p>
-      </footer>
+      
     </div>
   );
 }
+

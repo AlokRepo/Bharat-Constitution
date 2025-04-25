@@ -45,12 +45,8 @@ export default function Home() {
         </Tabs>
       </main>
 
-      <footer className="h-16 flex items-center justify-center bg-gray-100 mt-8">
-        <p className="text-sm text-gray-500">
-          &copy; 2025 Bharat Constitution. All rights
-          reserved.
-        </p>
-      </footer>
+      
     </div>
   );
 }
+
