@@ -1,6 +1,7 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
+import { articleContent } from "@/lib/article-content";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -33,7 +34,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           {article.title}
         </h1>
         <div className="border rounded-md p-4">
-          <p className="text-gray-700">{article.content}</p>
+          <p className="text-gray-700">{articleContent[article.id]}</p>
         </div>
       
 
@@ -42,3 +43,4 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
+
