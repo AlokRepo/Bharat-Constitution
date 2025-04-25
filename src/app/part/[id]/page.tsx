@@ -21,7 +21,7 @@ const getRandomColor = () => {
 };
 
 export default function PartPage({ params }: PartPageProps) {
-  const { id } = React.use(Promise.resolve(params));
+  const { id } = params;
   const router = useRouter();
 
   const part = constitutionData.find((part) => part.id === id);
