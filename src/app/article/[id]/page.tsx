@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
+import styles from './article-content.module.css'; // Import the CSS module
 
 interface ArticlePageProps {
   params: { id: string };
@@ -33,7 +34,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <h1 className="text-3xl font-semibold text-center mb-6">
           {article.title}
         </h1>
-        <div className="border rounded-md p-4">
+        <div className={`border rounded-md p-4 ${styles.articleContent}`}>
           <p className="text-gray-700">{articleContent[article.id]}</p>
         </div>
       
@@ -43,4 +44,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
-
