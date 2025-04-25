@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useMemo } from "react";
+import styles from "./part-page.module.css";
 
 interface PartPageProps {
   params: { id: string };

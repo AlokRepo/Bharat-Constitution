@@ -1,0 +1,23 @@
+/* src/app/part/[id]/part-page.module.css */
+
+.articleLink {
+  text-decoration: none; /* Remove underlines */
+  color: inherit; /* Inherit text color from parent */
+  display: block; /* Make the whole li clickable */
+  padding: 0.75rem 1.25rem; /* Add some padding for better look */
+}
+
+.articleLink:hover {
+  text-decoration: none; /* Remove underlines */
+}
+
+.articleItem {
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 0.375rem; /* Rounded corners */
+  margin-bottom: 0.5rem; /* Space between articles */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.articleItem:hover {
+  transform: scale(1.02); /* Slight scale up on hover */
+}
