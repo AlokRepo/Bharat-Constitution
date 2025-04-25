@@ -42,5 +42,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
-
-
