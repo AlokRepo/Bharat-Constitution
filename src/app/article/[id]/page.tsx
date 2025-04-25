@@ -2,10 +2,9 @@
 
 import { constitutionData } from "@/lib/constitution-data";
 import { articleContent } from "@/lib/article-content";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
 import React from "react";
 import styles from './article-content.module.css'; // Import the CSS module
 
