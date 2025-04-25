@@ -1,18 +1,15 @@
-"use client";
-
 import { constitutionData } from "@/lib/constitution-data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 interface ArticlePageProps {
   params: { id: string };
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = React.use(Promise.resolve(params));
+  const { id } = params;
   const router = useRouter();
 
   // Find the article based on the ID
@@ -42,4 +39,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
-

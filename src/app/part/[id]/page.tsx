@@ -1,18 +1,15 @@
-"use client";
-
 import { constitutionData } from "@/lib/constitution-data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 interface PartPageProps {
   params: { id: string };
 }
 
 export default function PartPage({ params }: PartPageProps) {
-  const { id } = React.use(Promise.resolve(params));
+  const { id } = params;
   const router = useRouter();
 
   const part = constitutionData.find((part) => part.id === id);
@@ -57,5 +54,3 @@ export default function PartPage({ params }: PartPageProps) {
     </div>
   );
 }
-
-
