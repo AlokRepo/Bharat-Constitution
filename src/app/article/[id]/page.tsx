@@ -1,22 +1,21 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
-import { articleContent } from "@/lib/article-content"; // Corrected import path
+import { articleContent } from "@/lib/article-content";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import React from "react";
-import styles from './article-content.module.css'; // Import the CSS module
+import styles from './article-content.module.css';
 
 interface ArticlePageProps {
   params: { id: string };
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = params.id;
+  const id = params.id;
   const router = useRouter();
 
-  // Find the article based on the ID
   const article = constitutionData.flatMap(part => part.articles).find(article => article.id === id);
 
   if (!article) {
@@ -47,5 +46,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
-
-
