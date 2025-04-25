@@ -1,6 +1,9 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 interface ArticlePageProps {
   params: { id: string };
@@ -18,12 +21,14 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="h-24 flex items-center justify-center">
-        <div className="w-full h-full flex flex-row">
-          <div className="bg-[hsl(var(--primary))] h-full w-1/3"></div>
-          <div className="bg-white h-full w-1/3"></div>
-          <div className="bg-green-500 h-full w-1/3"></div>
-        </div>
+      {/* Header */}
+      <header className="h-24 flex items-center justify-between px-4">
+        <Link href="/" className="flex items-center gap-2 text-sm">
+          <Button variant="ghost" size="sm">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Index
+          </Button>
+        </Link>
       </header>
 
       <main className="flex-1 container mx-auto py-8">
@@ -35,6 +40,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         </div>
       </main>
 
+      {/* Footer */}
       <footer className="h-16 flex items-center justify-center bg-gray-100">
         <p className="text-sm text-gray-500">
           &copy; {new Date().getFullYear()} Bharat Constitution. All rights
