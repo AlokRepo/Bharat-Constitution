@@ -1,7 +1,7 @@
 "use client";
 
 import { constitutionData } from "@/lib/constitution-data";
-import { articleContent } from "./article-content";
+import { articleContent } from "./article-content"; // Corrected import path
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -13,7 +13,7 @@ interface ArticlePageProps {
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = params;
+  const { id } = params.id;
   const router = useRouter();
 
   // Find the article based on the ID
