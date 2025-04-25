@@ -12,7 +12,7 @@ interface PartPageProps {
 }
 
 export default function PartPage({ params }: PartPageProps) {
-  const { id } = React.use(Promise.resolve(params.id));
+  const id = React.use(Promise.resolve(params.id));
   const router = useRouter();
 
   const part = constitutionData.find((part) => part.id === id);
