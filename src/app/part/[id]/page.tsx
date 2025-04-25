@@ -11,6 +11,15 @@ interface PartPageProps {
   params: { id: string };
 }
 
+// Array of tricolor-inspired colors
+const tricolorColors = ["#FF99331A", "#FFFFFF1A", "#1388081A"];
+
+// Function to get a random color from the tricolorColors array
+const getRandomColor = () => {
+  const randomIndex = Math.floor(Math.random() * tricolorColors.length);
+  return tricolorColors[randomIndex];
+};
+
 export default function PartPage({ params }: PartPageProps) {
   const { id } = params;
   const router = useRouter();
@@ -36,19 +45,25 @@ export default function PartPage({ params }: PartPageProps) {
 
         <div className="border rounded-md p-4 bg-white shadow-sm">
           <ul className="space-y-2">
-            {part.articles.map((article, index) => (
-              <li
-                key={article.id}
-                className="rounded-md hover:bg-primary/10 transition"
-              >
-                <Link
-                  href={`/article/${article.id}`}
-                  className="block p-4 rounded-md no-underline text-foreground"
+            {part.articles.map((article, index) => {
+              const randomHoverColor = getRandomColor(); // Get a random color for each article
+              return (
+                <li
+                  key={article.id}
+                  className="rounded-md transition"
+                  style={{
+                    "--hover-bg": randomHoverColor, // Set the background color as a CSS variable
+                  }}
                 >
-                  {article.title}
-                </Link>
-              </li>
-            ))}
+                  <Link
+                    href={`/article/${article.id}`}
+                    className="block p-4 rounded-md no-underline text-foreground"
+                  >
+                    {article.title}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       
