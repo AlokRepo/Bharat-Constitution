@@ -47,7 +47,7 @@ export default function Home() {
               <TabsTrigger
                 key={part.id}
                 value={part.id}
-                className="text-xl font-bold rounded-md p-4 cursor-pointer bg-white shadow-sm hover:bg-primary/50"
+                className="text-md font-bold rounded-md p-4 cursor-pointer bg-white shadow-sm hover:bg-primary/50"
                 onClick={() => router.push(`/part/${part.id}`)}
               >
                 {part.title}
