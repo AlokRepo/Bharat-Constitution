@@ -12,7 +12,7 @@ interface ArticlePageProps {
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = React.use(Promise.resolve(params));
+  const { id } = params;
   const router = useRouter();
 
   // Find the article based on the ID
@@ -42,4 +42,5 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
+
 
