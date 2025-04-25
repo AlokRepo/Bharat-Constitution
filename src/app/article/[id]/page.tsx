@@ -13,7 +13,7 @@ interface ArticlePageProps {
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
-  const { id } = params;
+  const id = params.id;
   const router = useRouter();
 
   const article = constitutionData.flatMap(part => part.articles).find(article => article.id === id);
@@ -32,10 +32,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <h1 className="text-3xl font-semibold text-center mb-6">
           {article.title}
         </h1>
-        <div className={`border rounded-md p-4 ${styles.articleContent}`}>
+        <div className={`border rounded-md p-4 ${styles.articleContent}`} style={{ backgroundColor: 'rgba(255, 153, 51, 0.1)', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
           <p className="text-gray-700" style={{ fontFamily: 'serif', fontSize: '1.1rem' }}>{articleContent[article.id]}</p>
         </div>
-        <div className="mt-4 p-4 rounded-md border shadow-sm bg-secondary text-secondary-foreground">
+        <div className="mt-4 p-4 rounded-md border shadow-sm" style={{ backgroundColor: 'rgba(19, 136, 8, 0.1)', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <h2 className="text-xl font-semibold mb-2">Summary</h2>
             <p className="text-sm text-muted-foreground" style={{ fontFamily: 'sans-serif', fontSize: '0.9rem' }}>{article?.summary}</p>
           </div>
@@ -46,4 +46,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     </div>
   );
 }
-
