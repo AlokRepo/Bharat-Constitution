@@ -4,6 +4,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { constitutionData } from "@/lib/constitution-data";
 import Link from "next/link";
 
+const articleBoxColors = [
+  "bg-muted hover:bg-accent",
+  "bg-secondary hover:bg-primary",
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -40,8 +45,8 @@ export default function Home() {
               className="mt-4 border rounded-md p-4"
             >
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
-              {part.articles.map((article) => (
-                <div key={article.id} className="mb-4 border rounded-md p-4">
+              {part.articles.map((article, index) => (
+                <div key={article.id} className={`mb-4 border rounded-md p-4 ${articleBoxColors[index % articleBoxColors.length]}`}>
                   <Link href={`/article/${article.id}`} className="text-xl font-medium cursor-pointer">
                     {article.title}
                   </Link>
