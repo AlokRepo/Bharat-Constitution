@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useMemo } from "react";
 
 interface PartPageProps {
   params: { id: string };
@@ -14,17 +14,19 @@ interface PartPageProps {
 // Array of tricolor-inspired transparent colors
 const tricolorColors = ["#FF99331A", "#FFFFFF1A", "#1388081A"];
 
-// Function to get a random color from the tricolorColors array
-const getRandomColor = () => {
-  const randomIndex = Math.floor(Math.random() * tricolorColors.length);
-  return tricolorColors[randomIndex];
-};
-
 export default function PartPage({ params }: PartPageProps) {
   const { id } = params;
   const router = useRouter();
 
   const part = constitutionData.find((part) => part.id === id);
+
+  // Memoize random colors to prevent re-renders on every update
+  const articleColors = useMemo(() => {
+    return part?.articles.map(() => {
+      const randomIndex = Math.floor(Math.random() * tricolorColors.length);
+      return tricolorColors[randomIndex];
+    }) || [];
+  }, [part?.articles]);
 
   if (!part) {
     return <div className="text-center py-12">Part not found</div>;
@@ -42,25 +44,22 @@ export default function PartPage({ params }: PartPageProps) {
 
       <div className="border rounded-md p-4 bg-white shadow-sm">
         <ul className="space-y-2">
-          {part.articles.map((article) => {
-            const randomHoverColor = getRandomColor();
-            return (
-              <li
-                key={article.id}
-                className="rounded-md transition hover:scale-[1.01]"
-                style={{
-                  backgroundColor: randomHoverColor,
-                }}
+          {part.articles.map((article, index) => (
+            <li
+              key={article.id}
+              className="rounded-md transition hover:scale-[1.01]"
+              style={{
+                backgroundColor: articleColors[index % articleColors.length],
+              }}
+            >
+              <Link
+                href={`/article/${article.id}`}
+                className="block p-4 rounded-md no-underline text-foreground"
               >
-                <Link
-                  href={`/article/${article.id}`}
-                  className="block p-4 rounded-md no-underline text-foreground"
-                >
-                  {article.title}
-                </Link>
-              </li>
-            );
-          })}
+                {article.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
