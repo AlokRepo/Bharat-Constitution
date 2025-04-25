@@ -44,6 +44,7 @@ export default function Home() {
               className="mt-4 border rounded-md p-4"
             >
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
+              <p className="text-gray-500 mb-4">{part.description}</p>
               <ul className="space-y-2">
                 {part.articles.map((article) => (
                   <li key={article.id}>
@@ -74,3 +75,4 @@ export default function Home() {
     </div>
   );
 }
+

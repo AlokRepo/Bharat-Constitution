@@ -2,6 +2,7 @@ export const constitutionData = [
   {
     id: "partI",
     title: "Part I: The Union and its Territory",
+    description: "This part describes the name and territory of the Union, including the establishment and alteration of new and existing states.",
     articles: [
       {
         id: "article1",
@@ -28,6 +29,7 @@ export const constitutionData = [
   {
     id: "partII",
     title: "Part II: Citizenship",
+    description: "This part outlines the rules for citizenship, determining who is a citizen of India at the commencement of the Constitution and addressing migration.",
     articles: [
       {
         id: "article5",
@@ -69,6 +71,7 @@ export const constitutionData = [
   {
     id: "partIII",
     title: "Part III: Fundamental Rights",
+    description: "This part guarantees fundamental rights to all citizens, including rights to equality, freedom, and protection against exploitation.",
     articles: [
       {
         id: "article12",
@@ -195,6 +198,7 @@ export const constitutionData = [
   {
     id: "partIV",
     title: "Part IV: Directive Principles of State Policy",
+    description: "This section contains guidelines for the State, promoting social and economic welfare, though not enforceable by any court.",
     articles: [
       {
         id: "article36",
@@ -296,6 +300,7 @@ export const constitutionData = [
   {
     id: "partIVA",
     title: "Part IV-A: Fundamental Duties",
+    description: "This part specifies the fundamental duties of citizens, emphasizing their obligations to the nation.",
     articles: [
       {
         id: "article51A",
@@ -307,6 +312,7 @@ export const constitutionData = [
   {
     id: "partV",
     title: "Part V: The Union",
+    description: "This part describes the executive, legislative, and judicial branches of the Union government.",
     articles: [
       {
         id: "article52",
@@ -558,6 +564,7 @@ export const constitutionData = [
   {
     id: "partVI",
     title: "Part VI: The States",
+    description: "This part outlines the structure and powers of the State governments.",
     articles: [
       {
         id: "article152",
@@ -694,6 +701,7 @@ export const constitutionData = [
   {
     id: "partVIII",
     title: "Part VIII: The Union Territories",
+    description: "This part outlines the administration and governance of the Union Territories.",
     articles: [
       {
         id: "article239",
@@ -730,6 +738,7 @@ export const constitutionData = [
   {
     id: "partIX",
     title: "Part IX: The Panchayats",
+    description: "This part deals with the establishment and responsibilities of Panchayats at the village level.",
     articles: [
       {
         id: "article243",
@@ -816,6 +825,7 @@ export const constitutionData = [
   {
     id: "partIXA",
     title: "Part IX-A: The Municipalities",
+    description: "This part focuses on the structure and functions of Municipalities in urban areas.",
     articles: [
       {
         id: "article243P",
@@ -912,6 +922,7 @@ export const constitutionData = [
   {
     id: "partIXB",
     title: "Part IX-B: The Co-operative Societies",
+    description: "This part focuses on the regulation and promotion of co-operative societies.",
     articles: [
       {
         id: "article243ZH",
@@ -983,6 +994,7 @@ export const constitutionData = [
   {
     id: "partX",
     title: "Part X: The Scheduled and Tribal Areas",
+    description: "This part addresses the administration and control of Scheduled and Tribal Areas.",
     articles: [
       {
         id: "article244",
@@ -999,6 +1011,7 @@ export const constitutionData = [
   {
     id: "partXI",
     title: "Part XI: Relations between the Union and the States",
+    description: "This part defines the legislative, administrative, and financial relations between the Union and the States.",
     articles: [
       {
         id: "article245",
@@ -1100,6 +1113,7 @@ export const constitutionData = [
   {
     id: "partXII",
     title: "Part XII: Finance, Property, Contracts and Suits",
+    description: "This part outlines the financial framework of the Union and the States, and their powers regarding property and contracts.",
     articles: [
       {
         id: "article264",
@@ -1296,6 +1310,7 @@ export const constitutionData = [
   {
     id: "partXIII",
     title: "Part XIII: Trade, Commerce and Intercourse",
+    description: "This part ensures freedom of trade, commerce, and intercourse throughout India.",
     articles: [
       {
         id: "article301",
@@ -1332,6 +1347,7 @@ export const constitutionData = [
   {
     id: "partXIV",
     title: "Part XIV: Services under the Union and States",
+    description: "This part regulates the recruitment and conditions of service for public servants under the Union and the States.",
     articles: [
       {
         id: "article308",
@@ -1418,6 +1434,7 @@ export const constitutionData = [
   {
     id: "partXIVA",
     title: "Part XIV-A: Tribunals",
+    description: "This part provides for the establishment of tribunals to address administrative and other disputes.",
     articles: [
       {
         id: "article323A",
@@ -1434,6 +1451,7 @@ export const constitutionData = [
   {
     id: "partXV",
     title: "Part XV: Elections",
+    description: "This part deals with the conduct of elections to Parliament and State Legislatures.",
     articles: [
       {
         id: "article324",
@@ -1470,6 +1488,7 @@ export const constitutionData = [
   {
     id: "partXVI",
     title: "Part XVI: Special Provisions for Certain Classes",
+    description: "This part contains special provisions for Scheduled Castes, Scheduled Tribes, and other backward classes.",
     articles: [
       {
         id: "article330",
@@ -1556,6 +1575,7 @@ export const constitutionData = [
   {
     id: "partXVII",
     title: "Part XVII: Official Language",
+    description: "This part specifies the official languages of the Union and the States.",
     articles: [
       {
         id: "article343",
@@ -1617,6 +1637,7 @@ export const constitutionData = [
   {
     id: "partXVIII",
     title: "Part XVIII: Emergency Provisions",
+    description: "This part outlines the provisions for declaring a national or financial emergency.",
     articles: [
       {
         id: "article352",
@@ -1668,6 +1689,7 @@ export const constitutionData = [
   {
     id: "partXIX",
     title: "Part XIX: Miscellaneous",
+    description: "This part includes various miscellaneous provisions.",
     articles: [
       {
         id: "article361",
@@ -1719,6 +1741,7 @@ export const constitutionData = [
   {
     id: "partXX",
     title: "Part XX: Amendment of the Constitution",
+    description: "This part specifies the procedure for amending the Constitution.",
     articles: [
       {
         id: "article368",
@@ -1730,6 +1753,7 @@ export const constitutionData = [
   {
     id: "partXXI",
     title: "Part XXI: Temporary, Transitional and Special Provisions",
+    description: "This part includes temporary, transitional, and special provisions.",
     articles: [
       {
         id: "article369",
@@ -1846,6 +1870,7 @@ export const constitutionData = [
   {
     id: "partXXII",
     title: "Part XXII: Short Title, Commencement, Authoritative Text",
+    description: "This part includes the short title of the Constitution and the date of commencement.",
     articles: [
       {
         id: "article393",
@@ -1872,6 +1897,7 @@ export const constitutionData = [
   {
     id: "schedules",
     title: "Schedules",
+    description: "The schedules are lists in the Constitution that classify and detail governmental activity.",
     articles: [
       {
         id: "schedule1",
@@ -1938,6 +1964,7 @@ export const constitutionData = [
   {
     id: "amendments",
     title: "Key Constitutional Amendments",
+    description: "The amendments modify the Constitution of India, that reflects evolution.",
     articles: [
       {
         id: "amendment1",
