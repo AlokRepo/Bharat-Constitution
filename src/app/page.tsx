@@ -2,11 +2,9 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { constitutionData } from "@/lib/constitution-data";
-import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
-  const [selectedArticle, setSelectedArticle] = useState(null);
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Tricolor Header */}
@@ -44,14 +42,9 @@ export default function Home() {
               <h2 className="text-2xl font-semibold mb-4">{part.title}</h2>
               {part.articles.map((article) => (
                 <div key={article.id} className="mb-4">
-                  <h3 className="text-xl font-medium cursor-pointer" onClick={() => setSelectedArticle(article)}>
+                  <Link href={`/article/${article.id}`} className="text-xl font-medium cursor-pointer">
                     {article.title}
-                  </h3>
-                  {selectedArticle?.id === article.id && (
-                    <div className="mt-2 p-2 border rounded-md">
-                      <p className="text-gray-700">{selectedArticle.content}</p>
-                    </div>
-                  )}
+                  </Link>
                 </div>
               ))}
             </TabsContent>
